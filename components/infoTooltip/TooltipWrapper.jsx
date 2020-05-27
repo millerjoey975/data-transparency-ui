@@ -180,7 +180,7 @@ export default class TooltipWrapper extends React.Component {
          * Given a user wants to override the default positioning,
          * do not use top
          */
-        if (this.props?.styles?.transform) {
+        if (Object.keys(this.props.styles).includes('transform')) {
             delete spacerStyle.top;
             delete spacerStyle.left;
         }
