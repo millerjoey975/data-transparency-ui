@@ -27,8 +27,8 @@ const ExpandableRow = ({
     const icon = expanded ? 'chevron-down' : 'chevron-right';
     const columnTitles = columns.map(({ title }) => title);
     const toggleExpand = () => {
-        setExpanded(!expanded);
         if (onExpand) onExpand();
+        setExpanded(!expanded);
     };
     const dividerRow = (
         <tr className={`usda-table__child-row usda-table__child-row_divider${oddClass}`}>
