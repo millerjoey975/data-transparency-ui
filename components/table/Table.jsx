@@ -20,7 +20,8 @@ const propTypes = {
     }),
     updateSort: PropTypes.func,
     expandable: PropTypes.bool,
-    divider: PropTypes.string
+    divider: PropTypes.string,
+    onExpand: PropTypes.func
 };
 
 const Table = (props) => (
@@ -49,7 +50,8 @@ const Table = (props) => (
                             data={row}
                             oddClass={oddClass}
                             columns={props.columns}
-                            divider={props.divider} />
+                            divider={props.divider}
+                            onExpand={props.onExpand} />
                     );
                 }
                 return (

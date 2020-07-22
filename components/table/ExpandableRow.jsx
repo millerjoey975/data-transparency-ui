@@ -12,20 +12,23 @@ const propTypes = {
     data: PropTypes.object,
     columns: PropTypes.array,
     oddClass: PropTypes.string,
-    divider: PropTypes.string
+    divider: PropTypes.string,
+    onExpand: PropTypes.func
 };
 
 const ExpandableRow = ({
     data,
     columns,
     oddClass,
-    divider
+    divider,
+    onExpand
 }) => {
     const [expanded, setExpanded] = useState(false);
     const icon = expanded ? 'chevron-down' : 'chevron-right';
     const columnTitles = columns.map(({ title }) => title);
     const toggleExpand = () => {
         setExpanded(!expanded);
+        if (onExpand) onExpand();
     };
     const dividerRow = (
         <tr className={`usda-table__child-row usda-table__child-row_divider${oddClass}`}>
