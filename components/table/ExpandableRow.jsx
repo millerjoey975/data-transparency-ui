@@ -27,6 +27,7 @@ const ExpandableRow = ({
     const icon = expanded ? 'chevron-down' : 'chevron-right';
     const columnTitles = columns.map(({ title }) => title);
     const toggleExpand = () => {
+        console.log(' Working ');
         if (onExpand) onExpand();
         setExpanded(!expanded);
     };
